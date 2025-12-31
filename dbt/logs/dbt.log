@@ -1,0 +1,31 @@
+[0m22:55:13.825112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053accd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107853220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107853c70>]}
+
+
+============================== 22:55:13.828878 | 26ff4255-9581-491e-8ab7-57f0c18a8b94 ==============================
+[0m22:55:13.828878 [info ] [MainThread]: Running with dbt=1.10.17
+[0m22:55:13.829226 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'log_path': 'logs', 'target_path': 'None', 'version_check': 'True', 'no_print': 'None', 'introspect': 'True', 'partial_parse': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/performek5/.dbt', 'cache_selected_only': 'False', 'use_colors': 'True', 'fail_fast': 'False', 'log_format': 'default', 'invocation_command': 'dbt init cci_dbt', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'empty': 'None', 'write_json': 'True', 'debug': 'False'}
+[0m22:55:13.837659 [info ] [MainThread]: Creating dbt configuration folder at /Users/performek5/.dbt
+[0m22:55:13.838554 [debug] [MainThread]: Starter project path: /Users/performek5/Desktop/cci-platform/.venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m22:55:13.842081 [info ] [MainThread]: 
+Your new dbt project "cci_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:55:13.842280 [info ] [MainThread]: Setting up your profile.
+[0m22:56:43.407933 [info ] [MainThread]: Profile cci_dbt written to /Users/performek5/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:56:43.414823 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 89.63693, "process_in_blocks": "0", "process_kernel_time": 0.14097, "process_mem_max_rss": "100073472", "process_out_blocks": "0", "process_user_time": 0.821222}
+[0m22:56:43.415700 [debug] [MainThread]: Command `dbt init` succeeded at 22:56:43.415509 after 89.64 seconds
+[0m22:56:43.416319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053accd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e52d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10782a9d0>]}
+[0m22:56:43.416996 [debug] [MainThread]: Flushing usage events
+[0m22:56:46.334331 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_leads
+    columns:
+      - name: lead_id
+        tests: [not_null, unique]
+      - name: consent_flag
+        tests: [not_null]
+
+  - name: stg_contact_attempts
+    columns:
+      - name: attempt_id
+        tests: [not_null, unique]
+      - name: lead_id
+        tests: [not_null]
+
+  - name: stg_conversions
+    columns:
+      - name: conversion_id
+        tests: [not_null, unique]
+      - name: lead_id
+        tests: [not_null]
+      - name: revenue
+        tests: [not_null]
