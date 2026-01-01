@@ -78,3 +78,62 @@ order by cnt desc;"
 - Low incidence of attempt-frequency violations suggests rate-limiting controls
   are largely effective.
 
+```mermaid
+flowchart LR
+  subgraph Sources["Data Sources (Synthetic or Real)"]
+    A1[leads.csv]
+    A2[contact_attempts.csv]
+    A3[conversions.csv]
+    A4[dnc.csv]
+  end
+
+  subgraph Ingest["Ingestion"]
+    B1[Python Generator<br/>scripts/gen_synth_data.py]
+    B2[psql \\copy into raw schema]
+  end
+
+  subgraph Storage["Storage: Postgres (Docker)"]
+    C1[(raw.leads)]
+    C2[(raw.contact_attempts)]
+    C3[(raw.conversions)]
+    C4[(raw.dnc)]
+  end
+
+  subgraph Transform["Transform: dbt"]
+    D1[stg_leads]
+    D2[stg_contact_attempts]
+    D3[stg_conversions]
+    D4[mart_compliance_risk]
+    D5[tests: not_null / unique]
+  end
+
+  subgraph Consume["Consumption"]
+    E1[SQL Queries<br/>psql / notebooks]
+    E2[Dashboards (optional)<br/>Tableau/Metabase]
+  end
+
+  A1-->B1
+  A2-->B1
+  A3-->B1
+  A4-->B1
+  B1-->B2
+  B2-->C1
+  B2-->C2
+  B2-->C3
+  B2-->C4
+
+  C1-->D1
+  C2-->D2
+  C3-->D3
+  C4-->D4
+  D1-->D4
+  D2-->D4
+  D3-->D4
+  D5---D1
+  D5---D2
+  D5---D3
+
+  D4-->E1
+  D4-->E2
+```
+
