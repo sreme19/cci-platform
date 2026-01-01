@@ -65,5 +65,16 @@ select violation_type, severity, count(*) as cnt
 from analytics.mart_compliance_risk
 group by 1,2
 order by cnt desc;"
+```
 
+## Executive Takeaways
+
+- Majority of compliance risk originated from operational misconfiguration
+  (calling outside allowed hours), indicating system-level rather than agent-level failure.
+- DNC and post–opt-out violations represent critical legal exposure and require
+  real-time suppression controls.
+- Consent gaps remain a material risk even with moderate volumes, reinforcing the
+  need for consent-aware routing and campaign gating.
+- Low incidence of attempt-frequency violations suggests rate-limiting controls
+  are largely effective.
 
