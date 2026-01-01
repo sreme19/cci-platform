@@ -47,3 +47,23 @@ The system converts raw engagement data into **auditable, executive-ready risk m
 - Production-grade transformation discipline
 - Executive-level problem framing
 
+## Results (Synthetic Run)
+
+Violation distribution from `analytics.mart_compliance_risk`:
+
+- outside_allowed_hours (high): 250  
+- dnc_match (critical): 36  
+- attempt_after_opt_out (high): 30  
+- no_consent (high): 20  
+- too_many_attempts_per_day (medium): 2  
+
+Reproduce:
+
+```bash
+docker exec -it cci_postgres psql -U cci_user -d cci_db -c "
+select violation_type, severity, count(*) as cnt
+from analytics.mart_compliance_risk
+group by 1,2
+order by cnt desc;"
+
+
